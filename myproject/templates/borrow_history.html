@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+  <h1>{% block title %}history{% endblock %}</h1>
+
+
+{% block content %}
+<body>
+<br><br>
+<div class="container">
+<div class="row">
+ <div class="col-md-8">
+            <h1> Your lend history</h1>
+        </div>
+    </div>
+</div><hr>
+
+   <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year</th>
+        <th scope="col">date</th>
+        <th scope="col">lended to</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in row %}
+    <tr>
+      <th class="thead-light" scope="row">{{r[0]}}</th>
+      <td class="text-primary font-weight-bold">{{r[1]}}</td>
+      <td class="text-danger font-weight-bold"  >{{r[2]}}</td>
+      <td class="text-success font-weight-bold">{{r[3]}}</td>
+        <td class="text-success font-weight-bold">{{r[4]}}</td>
+          <td class="text-success font-weight-bold">{{r[5]}}</td>
+{% endfor %}
+
+
+
+
+
+
+    </tr>
+
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+  <h1>{% block title %}search results{% endblock %}</h1>
+
+
+{% block content %}
+<body>
+<br><br>
+<div class="container">
+<div class="row">
+ <div class="col-md-8">
+            <h1> Your Borrowed Books</h1>
+        </div>
+    </div>
+</div><hr>
+
+   <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Retrieve</th>
+      <th scope="col">borrowed by</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in row %}
+    <tr>
+      <th class="thead-light" scope="row">{{r[0]}}</th>
+      <td class="text-primary font-weight-bold">{{r[1]}}</td>
+      <td class="text-danger font-weight-bold"  >{{r[2]}}</td>
+      <td class="text-success font-weight-bold">{{r[3]}}</td>
+
+      <td><a class="btn btn-primary" href="{{url_for('updateb',id=r[0])}}">edit</a></td>
+      <td><a class="btn btn-danger" href="{{url_for('deleteborrow',id=r[0])}}">delete</a></td>
+        <td><a class="btn btn-success" href="{{url_for('retrieve',id=r[0],firstname=r[1],lastname=r[2],year=r[3])}}">retrieve</a></td>
+            <td class="text-success font-weight-bold">{{r[4]}}</td>
+
+
+
+
+
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

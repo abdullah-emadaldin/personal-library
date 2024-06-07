@@ -1,0 +1,5 @@
+flask --app hello run
+venv\Scripts\activate
+
+
+flask --app hello --debug run

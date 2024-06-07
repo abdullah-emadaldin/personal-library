@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+  <h1>{% block title %}Log In{% endblock %}</h1>
+
+
+{% block content %}
+<br><br>
+<br><br>
+<br><br>
+
+<div class="container">
+<div class="row justify-content-md-center">
+ <div class="col-md-8">
+            <h1> Update Your Book</h1>
+        </div>
+    </div>
+</div>
+<br><br><hr>
+<div class="container" style="padding: 80px;">
+  <div class="row justify-content-md-center" >
+  <div class="col-sm-8">
+  <form method="post">
+
+      <br><div class="form-group">
+      <label for="username">ID</label>
+    <input type="text" name="id" class="form-control" id="id" value="{{row[0]}}" disabled></div>
+      <div class="form-group">
+
+    <label for="username">Name</label>
+    <input type="text" name="fn"  class="form-control" placeholder="enter book name..." id="username" value="{{row[1]}}"></div>
+        <div class="form-group">
+
+
+    <label for="password">Author</label>
+
+    <input type="text" name="ln" class="form-control" placeholder="enter author name..." id="password" value="{{row[2]}}"></div>
+
+      <div class="form-group">
+
+
+    <label for="y">Year</label>
+
+    <input type="text" name="year" class="form-control" placeholder="enter a year..." id="y" value="{{row[3]}}"></div>
+
+
+    <div class="form-group">
+
+
+    <label for="l">lended to</label>
+
+    <input type="text" name="l_to" class="form-control" placeholder="lended to" id="l" value="{{row[4]}}"></div>
+
+<div class="form-group">
+  <input type="submit" class="btn btn-primary" value="Update"></div>
+
+  </form></div></div></div>
+{% endblock %}

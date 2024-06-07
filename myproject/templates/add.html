@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+  <h1>{% block title %}Add Book{% endblock %}</h1>
+
+
+{% block content %}
+
+<br><br>
+<br><br>
+<br><br>
+<div class="container">
+<div class="row justify-content-md-center">
+ <div class="col-md-8">
+            <h1> Add Your Book</h1>
+        </div>
+    </div>
+</div>
+<br><br><hr>
+<div class="container" style="padding: 80px;">
+  <div class="row justify-content-md-center" >
+  <div class="col-sm-8">
+  <form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+    <label for="username">Name</label>
+      <input type="text" name="username" class="form-control" id="username" placeholder="enter book name..." required></div>
+      <div class="form-group">
+    <label for="password">Author</label>
+        <input type="text" name="password" class="form-control" placeholder="enter author name..." id="password" required></div>
+        <div class="form-group">
+    <label for="y">Year</label>
+        <input type="text" name="year" class="form-control" placeholder="enter a year..." id="y" required></div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Add"></div>
+  </form></div></div></div>
+{% endblock %}
